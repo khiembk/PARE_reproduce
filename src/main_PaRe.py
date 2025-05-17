@@ -245,6 +245,7 @@ def mixup_embedding_gate_ori(args, model, x, x_src, ep):
 
     if x.size()[0] == x_src.size()[0]:
         coefficient = int(args.begin_num - args.end_num * (ep / args.epochs))
+        coefficient = max(coefficient,1)
         gate_values_src = model.gate(x_src_flat)
         gate_values_src = gate_values_src.view(x_src.size()[0], x_src.size()[1])
         gate_values_tar = model.gate(x_flat)

@@ -1094,7 +1094,7 @@ def load_pde(root, batch_size, dataset='1DCFD', valid_split=-1, num_workers=4):
         single_file = True 
 
     elif dataset == 'DS':
-        #root = '/run/determined/workdir/shared_fs/data/PDEBench'
+        root = '/mnt/disk2/khiemtt/CrossModality/src/PDE_dataset/1D/diffusion-sorption'
         filename = '1D_diff-sorp_NA_NA.h5'
         reduced_resolution = 1
         reduced_resolution_t = 1
@@ -1114,6 +1114,7 @@ def load_pde(root, batch_size, dataset='1DCFD', valid_split=-1, num_workers=4):
         single_file = True 
 
     elif dataset == 'SW':
+        root = '/mnt/disk2/khiemtt/CrossModality/src/PDE_dataset/2D/shallow-water'
         filename = '2D_rdb_NA_NA.h5'
         reduced_resolution = 1
         reduced_resolution_t = 1
@@ -1123,7 +1124,7 @@ def load_pde(root, batch_size, dataset='1DCFD', valid_split=-1, num_workers=4):
         single_file = False
 
     elif dataset == 'Darcy':
-        # root = '/run/determined/workdir/shared_fs/data/PDEBench'
+        root = '/mnt/disk2/khiemtt/CrossModality/src/PDE_dataset/2D/DarcyFlow'
         filename = '2D_DarcyFlow_beta0.1_Train.hdf5'
         reduced_resolution = 2
         reduced_resolution_t = 1
@@ -1134,6 +1135,7 @@ def load_pde(root, batch_size, dataset='1DCFD', valid_split=-1, num_workers=4):
 
     elif dataset == 'RD2D':
         # root = '/run/determined/workdir/shared_fs/data/PDEBench'
+        root = '/mnt/disk2/khiemtt/CrossModality/src/PDE_dataset/2D/diffusion-reaction'
         filename = '2D_diff-react_NA_NA.h5'
         reduced_resolution = 1
         reduced_resolution_t = 1

@@ -17,7 +17,13 @@ hyperparameters:
     embedder_epochs: 60
     predictor_epochs: 0
     finetune_method: all
-
+    align_method: srcinit
+    cls_method: twocls
+    cls_num: 100
+    cls_num_src: 10
+    begin_num: 2000
+    end_num: 1500
+    seq_num: 32
     drop_out: 0
     batch_size: 4
     eval_batch_size: 1000
