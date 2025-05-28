@@ -44,7 +44,7 @@ def main(use_determined, args, info=None, context=None, DatasetRoot= None):
         cudnn.benchmark = True
 
     dims, sample_shape, num_classes, loss, args = get_config(root, args)
-    args.experiment_id = 65535
+    #args.experiment_id = 65535
     ##################################################################################################
     ##### Init wanDB
     wandb.login(key= "87a17a462a0003e50590ec537dda9beacbcc2d63")
@@ -54,7 +54,7 @@ def main(use_determined, args, info=None, context=None, DatasetRoot= None):
       project= f"CrossModality_{args.dataset}",
       # We pass a run name (otherwise it’ll be randomly assigned, like sunshine-lollypop-10)
       name = (
-    f"PARE_baseline_{args.dataset}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"),
+    f"PARE_baseline_{args.dataset}_id{args.experiment_id}"),
       # Track hyperparameters and run metadata
       config={
       "optimizer": args.optimizer,
@@ -549,6 +549,8 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     root_dataset = args.root_dataset
+    args.experiment_id = random.randint(1000, 9999)
+    
     if args.config is not None:     
         import yaml
 

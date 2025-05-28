@@ -1,9 +1,9 @@
 name: DARCY-FLOW-5
 hyperparameters: 
     dataset: DARCY-FLOW-5 
-    # embedder_dataset: CIFAR10
+    embedder_dataset: CIFAR10
     # embedder_dataset: IMAGENET
-    embedder_dataset: PASCAL
+    #embedder_dataset: PASCAL
     objective: otdd-exact
     weight: base
     maxsamples: 128
